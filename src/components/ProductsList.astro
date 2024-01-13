@@ -1,0 +1,25 @@
+---
+import Product from "./Product.astro"
+import type { APIProductsResponse, Product as ProductType } from "../types/productsApi"
+
+const res = await fetch('https://dummyjson.com/products', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+})
+
+const data = await res.json() as APIProductsResponse
+const products = data.products as ProductType[]
+
+---
+
+{products.map(({title: productName, price: productPrice, images: productImage}) => (
+        <Product {...{
+            productName, 
+            productPrice, 
+            productImage,
+        }} 
+        />
+    ))
+}

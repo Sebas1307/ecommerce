@@ -1,70 +1,23 @@
 ---
-import Product from '../components/Product.astro'
+import ProductsList from '../components/ProductsList.astro'
+import ReviewsList from '../components/ReviewsList.astro'
 import SectionImage from '../components/SectionImage.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title='Welcome to Astro.'>
+<Layout title='sisas eCommerce'>
  <main class='flex flex-col gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
   <SectionImage />
-  
   <section>
    <h2 class='text-2xl font-bold text-center'>Featured Products</h2>
    <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8'>
-    <Product />
-    <Product />
-    <Product />
+    <ProductsList />
    </div>
   </section>
-
   <section>
    <h2 class='text-2xl font-bold text-center'>What Our Customers Say</h2>
    <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8'>
-    <div class='flex flex-col items-center gap-4 p-4 border rounded-lg'>
-     <span
-      class='relative flex shrink-0 overflow-hidden rounded-full w-16 h-16 border'
-     >
-      <img
-       class='aspect-square h-full w-full'
-       alt='Customer 1'
-       src='https://mir-s3-cdn-cf.behance.net/project_modules/1400/25783144027231.58058eda644c9.jpg'
-      />
-     </span>
-     <p class='text-center'>
-      "I love the quality of the products. They are top-notch!"
-     </p>
-     <p class='font-semibold'>Customer 1</p>
-    </div>
-    <div class='flex flex-col items-center gap-4 p-4 border rounded-lg'>
-     <span
-      class='relative flex shrink-0 overflow-hidden rounded-full w-16 h-16 border'
-     >
-      <img
-       class='aspect-square h-full w-full'
-       alt='Customer 2'
-       src='https://mir-s3-cdn-cf.behance.net/project_modules/1400/25783144027231.58058eda644c9.jpg'
-      />
-     </span>
-     <p class='text-center'>
-      "The customer service is excellent. Highly recommended!"
-     </p>
-     <p class='font-semibold'>Customer 2</p>
-    </div>
-    <div class='flex flex-col items-center gap-4 p-4 border rounded-lg'>
-     <span
-      class='relative flex shrink-0 overflow-hidden rounded-full w-16 h-16 border'
-     >
-      <img
-       class='aspect-square h-full w-full'
-       alt='Customer 3'
-       src='https://mir-s3-cdn-cf.behance.net/project_modules/1400/25783144027231.58058eda644c9.jpg'
-      />
-     </span>
-     <p class='text-center'>
-      "Fast delivery and great prices. I'm a happy customer."
-     </p>
-     <p class='font-semibold'>Customer 3</p>
-    </div>
+    <ReviewsList>
    </div>
   </section>
  </main>
