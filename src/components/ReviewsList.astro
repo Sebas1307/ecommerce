@@ -1,29 +1,36 @@
 ---
-import Review from "./Review.astro";
+import Review from './Review.astro'
 
 const customerReviews = [
-    {
-        customerName: 'Customer 1', 
-        customerImage: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/25783144027231.58058eda644c9.jpg', 
-        customerReview: 'I love the quality of the products. They are top-notch!'
-    },
-    {
-        customerName: 'Customer 2', 
-        customerImage: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/25783144027231.58058eda644c9.jpg', 
-        customerReview: 'The customer service is excellent. Highly recommended!'
-    },
-    {
-        customerName: 'Customer 3', 
-        customerImage: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/25783144027231.58058eda644c9.jpg', 
-        customerReview: 'Fast delivery and great prices. I\'m a happy customer.'
-    },
+	{
+		customerName: 'Customer 1',
+		customerImage:
+			'https://mir-s3-cdn-cf.behance.net/project_modules/1400/25783144027231.58058eda644c9.jpg',
+		customerReview: 'I love the quality of the products. They are top-notch!',
+	},
+	{
+		customerName: 'Customer 2',
+		customerImage:
+			'https://mir-s3-cdn-cf.behance.net/project_modules/1400/25783144027231.58058eda644c9.jpg',
+		customerReview: 'The customer service is excellent. Highly recommended!',
+	},
+	{
+		customerName: 'Customer 3',
+		customerImage:
+			'https://mir-s3-cdn-cf.behance.net/project_modules/1400/25783144027231.58058eda644c9.jpg',
+		customerReview: "Fast delivery and great prices. I'm a happy customer.",
+	},
 ]
 ---
 
-{customerReviews.map(({customerName, customerImage, customerReview}) => 
-    <Review {...{
-        customerName,
-        customerImage,
-        customerReview
-    }}/>
-)}
+{
+	customerReviews.map(({ customerName, customerImage, customerReview }) => (
+		<Review
+			{...{
+				customerName,
+				customerImage,
+				customerReview,
+			}}
+		/>
+	))
+}

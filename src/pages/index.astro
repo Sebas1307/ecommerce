@@ -5,27 +5,35 @@ import ReviewsList from '../components/ReviewsList.astro'
 import SectionImage from '../components/SectionImage.astro'
 import Section from '../components/Section.astro'
 
+const sectionImage = {
+	title: 'Welcome to Our Store',
+	description: 'Discover our exclusive collection of premium products',
+}
+
 const sectionContent = [
- {
-  title: 'Featured Products',
-  content: ProductsList
- },
- {
-  title: 'What Our Customers Say',
-  content: ReviewsList
- }
+	{
+		title: 'Featured Products',
+		content: ProductsList,
+	},
+	{
+		title: 'What Our Customers Say',
+		content: ReviewsList,
+	},
 ]
 ---
 
-<Layout title='sisas eCommerce'>
-<main class='flex flex-col gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
-    <SectionImage />
-  {
-   sectionContent.map((section) => (
-    <Section title={section.title}>
-     <section.content />
-    </Section>
-   ))
-  }
-</main>
+<Layout title="sisas eCommerce">
+	<main class="flex flex-col gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+		<SectionImage
+			title={sectionImage.title}
+			description={sectionImage.description}
+		/>
+		{
+			sectionContent.map((section) => (
+				<Section title={section.title}>
+					<section.content />
+				</Section>
+			))
+		}
+	</main>
 </Layout>

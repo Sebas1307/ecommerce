@@ -1,15 +1,15 @@
-module.exports = {
-	semi: true,
-	singleQuote: false,
-	tabWidth: 2,
+export default {
+	semi: false,
+	singleQuote: true,
+	tabWidth: 1,
 	useTabs: true,
-	plugins: ["prettier-plugin-astro"],
+	plugins: ['prettier-plugin-astro'],
 	overrides: [
-    {
-      files: '*.astro',
-      options: {
-        parser: 'astro',
-      },
-    },
-  ],
-};
+		{
+			files: '*.astro',
+			options: {
+				parser: 'astro',
+			},
+		},
+	],
+}
