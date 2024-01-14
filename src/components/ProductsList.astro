@@ -8,13 +8,14 @@ const { products } = await getProductList()
 {
 	products &&
 		products.map(
-			({ id, title: productName, price: productPrice, images: productImage }) => (
+			({ id, title, description, price, images }) => (
 				<Product
 					{...{
 						id,
-						productName,
-						productPrice,
-						productImage,
+						title,
+                        description,
+						price,
+						images,
 					}}
 				/>
 			),

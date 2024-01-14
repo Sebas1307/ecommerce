@@ -8,6 +8,7 @@ import Section from '../components/Section.astro'
 const sectionImage = {
 	title: 'Welcome to Our Store',
 	description: 'Discover our exclusive collection of premium products',
+	image: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/25783144027231.58058eda644c9.jpg'
 }
 
 const sectionContent = [
@@ -27,6 +28,7 @@ const sectionContent = [
 		<SectionImage
 			title={sectionImage.title}
 			description={sectionImage.description}
+			image={sectionImage.image}
 		/>
 		{
 			sectionContent.map((section) => (

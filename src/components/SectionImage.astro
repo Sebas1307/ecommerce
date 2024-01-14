@@ -2,9 +2,10 @@
 interface Props {
 	title: string
 	description: string
+	image: string
 }
 
-const { title, description } = Astro.props
+const { title, description, image } = Astro.props
 ---
 
 <section class="flex flex-col items-center text-center">
@@ -15,7 +16,7 @@ const { title, description } = Astro.props
 	<img
 		class="rounded-lg object-cover w-full aspect-[3/1] mt-8"
 		height="400"
-		src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/25783144027231.58058eda644c9.jpg"
+		src={image}
 		width="1200"
 	/>
 </section>
