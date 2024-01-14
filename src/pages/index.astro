@@ -7,10 +7,6 @@ import Section from '../components/Section.astro'
 
 const sectionContent = [
  {
-  title: 'Welcome to Our Store',
-  content: SectionImage
- },
- {
   title: 'Featured Products',
   content: ProductsList
  },
@@ -22,14 +18,14 @@ const sectionContent = [
 ---
 
 <Layout title='sisas eCommerce'>
- <main class='flex flex-col gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
+<main class='flex flex-col gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
+    <SectionImage />
   {
    sectionContent.map((section) => (
-    <Section>
-     {section.title}
+    <Section title={section.title}>
      <section.content />
     </Section>
    ))
   }
- </main>
+</main>
 </Layout>
