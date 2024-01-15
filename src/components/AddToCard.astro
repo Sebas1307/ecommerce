@@ -1,25 +1,42 @@
 ---
-const buttonClass = `inline-flex
-			items-center
-			justify-center
-			rounded-md
-			text-sm
-			font-medium
-			ring-offset-background
-			transition-colors
-			focus-visible:outline-none
-			focus-visible:ring-2
-			focus-visible:ring-ring
-			focus-visible:ring-offset-2
-			disabled:pointer-events-none
-			disabled:opacity-50 bg-primary
-			text-black
-			hover:bg-black
-			hover:text-white
-			h-10
-			px-4
-			py-2
-			w-full`
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+
+const buttonClass = `
+bg-black 
+align-middle 
+select-none 
+font-sans 
+font-bold 
+text-center 
+uppercase 
+transition-all 
+disabled:opacity-50 
+disabled:shadow-none 
+disabled:pointer-events-none 
+text-xs 
+py-3 
+px-6 
+rounded-lg 
+shadow-gray-900/10 
+hover:shadow-gray-900/20 
+focus:opacity-[0.85] 
+active:opacity-[0.85] 
+active:shadow-none 
+block 
+w-full 
+bg-blue-gray-900/10 
+text-white 
+shadow-none 
+hover:scale-105 
+hover:shadow-none 
+focus:scale-105 
+focus:shadow-none 
+active:scale-100
+`
 ---
 
-<button class={buttonClass}> Add to Cart</button>
+<button class={buttonClass} type="button">{title}</button>

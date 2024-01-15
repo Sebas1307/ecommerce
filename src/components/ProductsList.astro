@@ -7,17 +7,15 @@ const { products } = await getProductList()
 
 {
 	products &&
-		products.map(
-			({ id, title, description, price, images }) => (
-				<Product
-					{...{
-						id,
-						title,
-                        description,
-						price,
-						images,
-					}}
-				/>
-			),
-		)
+		products.map(({ id, title, description, price, images }) => (
+			<Product
+				{...{
+					id,
+					title,
+					description,
+					price,
+					images,
+				}}
+			/>
+		))
 }
