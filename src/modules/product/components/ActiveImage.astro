@@ -1,0 +1,17 @@
+---
+interface Props {
+	image: string
+}
+
+const { image } = Astro.props
+---
+
+<div class="md:col-span-4">
+	<img
+		src={image}
+		alt="Product Image"
+		width="600"
+		height="900"
+		class="aspect-[2/3] object-cover w-full rounded-lg overflow-hidden"
+	/>
+</div>

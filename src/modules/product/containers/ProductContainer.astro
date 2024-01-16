@@ -1,0 +1,307 @@
+---
+import AddToCard from '../../../components/AddToCard.astro'
+import SelectImage from '../components/SelectImage.astro'
+import type { Product } from '../../../types/productsApi'
+import ReviewsList from '../../../components/ReviewsList.astro'
+import ActiveImage from '../components/ActiveImage.astro'
+import StarIcon from '../components/StarIcon.astro'
+
+interface Props {
+	product: Product
+}
+
+const { product } = Astro.props
+
+const rating = Math.round(product?.rating)
+
+---
+
+<div
+	class="grid md:grid-cols-2 gap-6 lg:gap-12 items-start max-w-6xl px-4 mx-auto py-6"
+>
+	<div class="grid md:grid-cols-5 gap-3 items-start">
+		<div class="hidden md:flex flex-col gap-3 items-start">
+			{product?.images.map((image) => <SelectImage image={image} />)}
+		</div>
+		<ActiveImage image={product.images[0]} />
+	</div>
+
+	<div class="grid gap-4 md:gap-10 items-start">
+		<div class="hidden md:flex items-start">
+			<div class="grid gap-4"> 
+				<h1 class="font-bold text-3xl lg:text-4xl">{product?.title}</h1>
+				<div>
+					<p>{product?.description}</p>
+				</div>
+				<div class="flex items-center gap-4">
+					<div class="flex items-center gap-0.5">
+						{Array(rating).fill().map(() => <StarIcon />)}
+						{Array(5 - rating).fill().map(() => <StarIcon color="gray" />)}
+					</div>
+				</div>
+			</div><div class="text-4xl font-bold ml-auto">${product?.price}</div>
+		</div><form class="grid gap-4 md:gap-10">
+			<div class="grid gap-2">
+				<label
+					class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base"
+					for="color"
+				>
+					Color
+				</label><div
+					role="radiogroup"
+					aria-required="false"
+					dir="ltr"
+					class="flex items-center gap-2"
+					id="color"
+					tabindex="-1"
+					style="outline: none;"
+				>
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+						for="color-black"
+						><button
+							type="button"
+							role="radio"
+							aria-checked="true"
+							data-state="checked"
+							value="black"
+							class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+							id="color-black"
+							tabindex="-1"
+							data-radix-collection-item=""
+							><span data-state="checked" class="flex items-center justify-center"
+								><svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									class="h-2.5 w-2.5 fill-current text-current"
+									><circle cx="12" cy="12" r="10"></circle></svg
+								></span
+							></button
+						><input
+							aria-hidden="true"
+							style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px;"
+							tabindex="-1"
+							type="radio"
+							value="black"
+							checked=""
+						/>
+						Black
+					</label><label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+						for="color-white"
+						><button
+							type="button"
+							role="radio"
+							aria-checked="false"
+							data-state="unchecked"
+							value="white"
+							class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+							id="color-white"
+							tabindex="-1"
+							data-radix-collection-item=""></button><input
+							aria-hidden="true"
+							style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px;"
+							tabindex="-1"
+							type="radio"
+							value="white"
+						/>
+						White
+					</label><label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+						for="color-blue"
+						><button
+							type="button"
+							role="radio"
+							aria-checked="false"
+							data-state="unchecked"
+							value="blue"
+							class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+							id="color-blue"
+							tabindex="-1"
+							data-radix-collection-item=""></button><input
+							aria-hidden="true"
+							style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px;"
+							tabindex="-1"
+							type="radio"
+							value="blue"
+						/>
+						Blue
+					</label>
+				</div>
+			</div><div class="grid gap-2">
+				<label
+					class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base"
+					for="size"
+				>
+					Size
+				</label><div
+					role="radiogroup"
+					aria-required="false"
+					dir="ltr"
+					class="flex items-center gap-2"
+					id="size"
+					tabindex="-1"
+					style="outline: none;"
+				>
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+						for="size-xs"
+						><button
+							type="button"
+							role="radio"
+							aria-checked="false"
+							data-state="unchecked"
+							value="xs"
+							class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+							id="size-xs"
+							tabindex="-1"
+							data-radix-collection-item=""></button><input
+							aria-hidden="true"
+							style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px;"
+							tabindex="-1"
+							type="radio"
+							value="xs"
+						/>
+						XS
+					</label><label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+						for="size-s"
+						><button
+							type="button"
+							role="radio"
+							aria-checked="false"
+							data-state="unchecked"
+							value="s"
+							class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+							id="size-s"
+							tabindex="-1"
+							data-radix-collection-item=""></button><input
+							aria-hidden="true"
+							style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px;"
+							tabindex="-1"
+							type="radio"
+							value="s"
+						/>S
+					</label><label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+						for="size-m"
+						><button
+							type="button"
+							role="radio"
+							aria-checked="true"
+							data-state="checked"
+							value="m"
+							class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+							id="size-m"
+							tabindex="-1"
+							data-radix-collection-item=""
+							><span data-state="checked" class="flex items-center justify-center"
+								><svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									class="h-2.5 w-2.5 fill-current text-current"
+									><circle cx="12" cy="12" r="10"></circle></svg
+								></span
+							></button
+						><input
+							aria-hidden="true"
+							style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px;"
+							tabindex="-1"
+							type="radio"
+							value="m"
+							checked=""
+						/>M
+					</label><label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+						for="size-l"
+						><button
+							type="button"
+							role="radio"
+							aria-checked="false"
+							data-state="unchecked"
+							value="l"
+							class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+							id="size-l"
+							tabindex="-1"
+							data-radix-collection-item=""></button><input
+							aria-hidden="true"
+							style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px;"
+							tabindex="-1"
+							type="radio"
+							value="l"
+						/>L
+					</label><label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
+						for="size-xl"
+						><button
+							type="button"
+							role="radio"
+							aria-checked="false"
+							data-state="unchecked"
+							value="xl"
+							class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+							id="size-xl"
+							tabindex="-1"
+							data-radix-collection-item=""></button><input
+							aria-hidden="true"
+							style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px;"
+							tabindex="-1"
+							type="radio"
+							value="xl"
+						/>
+						XL
+					</label>
+				</div>
+			</div><div class="grid gap-2">
+				<label
+					class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base"
+					for="quantity"
+				>
+					Quantity
+				</label><button
+					type="button"
+					role="combobox"
+					aria-controls="radix-:r3a:"
+					aria-expanded="false"
+					aria-autocomplete="none"
+					dir="ltr"
+					data-state="closed"
+					class="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-24"
+					><span style="pointer-events: none;"></span><svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="h-4 w-4 opacity-50"
+						aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg
+					></button
+				><select
+					aria-hidden="true"
+					tabindex="-1"
+					style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;"
+				></select>
+			</div>
+			<AddToCard title="Add to card" />
+		</form>
+	</div>
+	<ReviewsList />
+</div>

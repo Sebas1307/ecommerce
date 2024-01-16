@@ -1,5 +1,5 @@
 ---
-import AddToCard from './AddToCard.astro'
+import AddToCard from '../../../components/AddToCard.astro'
 
 interface Props {
 	id: number
@@ -41,7 +41,7 @@ const { id, title, description, price, images } = Astro.props
 		</p>
 	</div>
 	<div class="p-6 pt-0 flex gap-3">
-		<AddToCard title="Preview"/>
-		<AddToCard title="Add to card"/>
+		<AddToCard title="Preview" />
+		<AddToCard title="Add to card" />
 	</div>
 </div>

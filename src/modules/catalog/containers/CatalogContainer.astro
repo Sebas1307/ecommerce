@@ -1,0 +1,39 @@
+---
+import ProductsList from '../components/ProductsList.astro'
+import ReviewsList from '../../../components/ReviewsList.astro'
+import SectionImage from '../components/SectionImage.astro'
+import Section from '../components/Section.astro'
+
+const sectionImage = {
+	title: 'Welcome to Our Store',
+	description: 'Discover our exclusive collection of premium products',
+	image:
+		'https://mir-s3-cdn-cf.behance.net/project_modules/1400/25783144027231.58058eda644c9.jpg',
+}
+
+const sectionContent = [
+	{
+		title: 'Featured Products',
+		content: ProductsList,
+	},
+	{
+		title: 'What Our Customers Say',
+		content: ReviewsList,
+	},
+]
+---
+
+<main class="flex flex-col gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+	<SectionImage
+		title={sectionImage.title}
+		description={sectionImage.description}
+		image={sectionImage.image}
+	/>
+	{
+		sectionContent.map((section) => (
+			<Section title={section.title}>
+				<section.content />
+			</Section>
+		))
+	}
+</main>
