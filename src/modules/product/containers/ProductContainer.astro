@@ -13,7 +13,6 @@ interface Props {
 const { product } = Astro.props
 
 const rating = Math.round(product?.rating)
-
 ---
 
 <div
@@ -28,15 +27,23 @@ const rating = Math.round(product?.rating)
 
 	<div class="grid gap-4 md:gap-10 items-start">
 		<div class="hidden md:flex items-start">
-			<div class="grid gap-4"> 
+			<div class="grid gap-4">
 				<h1 class="font-bold text-3xl lg:text-4xl">{product?.title}</h1>
 				<div>
 					<p>{product?.description}</p>
 				</div>
 				<div class="flex items-center gap-4">
 					<div class="flex items-center gap-0.5">
-						{Array(rating).fill().map(() => <StarIcon />)}
-						{Array(5 - rating).fill().map(() => <StarIcon color="gray" />)}
+						{
+							Array(rating)
+								.fill()
+								.map(() => <StarIcon />)
+						}
+						{
+							Array(5 - rating)
+								.fill()
+								.map(() => <StarIcon color="gray" />)
+						}
 					</div>
 				</div>
 			</div><div class="text-4xl font-bold ml-auto">${product?.price}</div>
