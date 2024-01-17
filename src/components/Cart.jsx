@@ -1,7 +1,7 @@
 import { useState } from 'preact/hooks'
 
-export const Card = () => {
-	const [sidebar, setSidebar] = useState(true)
+export const Cart = () => {
+	const [sidebar, setSidebar] = useState(false)
 	const showSidebar = () => setSidebar(!sidebar)
 	const sidebarData = [
 		{
@@ -94,5 +94,3 @@ export const Card = () => {
 		</>
 	)
 }
-
-export default Card

@@ -1,5 +1,5 @@
 ---
-import { Card } from '../components/Card.jsx'
+import { Cart } from './Cart.jsx'
 ---
 
 <header
@@ -29,12 +29,17 @@ import { Card } from '../components/Card.jsx'
 				<a class="text-sm font-medium" href="/"> Contact</a>
 			</nav>
 			<div class="flex items-center gap-4">
-				<Card client:load />
+				<Cart client:load />
 				<button
 					class="inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm"
 				>
 					Sign In
 				</button>
+				<a
+					href="/admin"
+					class="inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-sm"
+					>Admin</a
+				>
 			</div>
 		</span>
 	</a>
