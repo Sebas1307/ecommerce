@@ -1,0 +1,13 @@
+---
+import SelectImage from './SelectImage.astro'
+
+interface Props {
+	images: string[]
+}
+
+const { images } = Astro.props
+---
+
+<div class="hidden md:flex flex-col gap-3 items-start">
+	{images && images.map((image) => <SelectImage image={image} />)}
+</div>

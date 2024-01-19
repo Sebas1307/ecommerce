@@ -1,118 +1,112 @@
-<div class="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900">
-    <header class="p-4 bg-white shadow-md dark:bg-gray-800">
-      <h1 class="text-2xl font-bold text-center">Product Management</h1>
-    </header>
-    <main class="flex-grow p-4">
-      <div class="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md dark:bg-gray-800">
-        <h2 class="text-2xl font-bold text-center">Add New Product</h2>
-        <form class="mt-6 space-y-4">
-          <div class="space-y-1">
-            <label
-              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              for="product-name"
-            >
-              Product Name
-            </label>
-            <input
-              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-              id="product-name"
-              placeholder="Enter product name"
-            />
-          </div>
-          <div class="space-y-1">
-            <label
-              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              for="product-description"
-            >
-              Product Description
-            </label>
-            <textarea
-              class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
-              id="product-description"
-              placeholder="Enter product description"
-            ></textarea>
-          </div>
-          <div class="space-y-1">
-            <label
-              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              for="product-price"
-            >
-              Product Price
-            </label>
-            <input
-              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-              id="product-price"
-              placeholder="Enter product price"
-            />
-          </div>
-          <div class="space-y-1">
-            <label
-              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              for="product-category"
-            >
-              Product Category
-            </label>
-            <button
-              type="button"
-              role="combobox"
-              aria-controls="radix-:r1r:"
-              aria-expanded="false"
-              aria-autocomplete="none"
-              dir="ltr"
-              data-state="closed"
-              data-placeholder=""
-              class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              <span style="pointer-events: none;">Select category</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-4 w-4 opacity-50"
-                aria-hidden="true"
-              >
-                <path d="m6 9 6 6 6-6"></path>
-              </svg>
-            </button>
-            <select
-              aria-hidden="true"
-              tabindex="-1"
-              style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;"
-            >
-              <option value=""></option>
-            </select>
-          </div>
-          <div class="space-y-1">
-            <label
-              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              for="product-image"
-            >
-              Product Image
-            </label>
-            <input
-              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-              id="product-image"
-              type="file"
-            />
-          </div>
-          <button
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
-            type="submit"
-          >
-            Add Product
-          </button>
-        </form>
-      </div>
-    </main>
-    <footer class="p-4 bg-white shadow-md dark:bg-gray-800">
-      <p class="text-center text-sm text-gray-500 dark:text-gray-300">
-        © 2024 Product Management. All rights reserved.
-      </p>
-    </footer>
-  </div>
+<div class="flex flex-col min-h-screen bg-gray-100">
+	<header class="p-4">
+		<h1 class="text-2xl font-bold text-center">Product Management</h1>
+	</header>
+	<main class="flex-grow p-4">
+		<div class="w-full max-w-md mx-auto p-6 bg-white rounded-lg">
+			<h2 class="text-2xl font-bold text-center">Add New Product</h2>
+			<form class="mt-6 space-y-4">
+				<div class="space-y-1">
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+						for="product-name"
+					>
+						Product Name
+					</label>
+					<input
+						class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+						id="product-name"
+						placeholder="Enter product name"
+					/>
+				</div>
+				<div class="space-y-1">
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+						for="product-description"
+					>
+						Product Description
+					</label>
+					<textarea
+						class="flex w-full max-h-96 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
+						id="product-description"
+						placeholder="Enter product description"></textarea>
+				</div>
+				<div class="space-y-1">
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+						for="product-price"
+					>
+						Product Price
+					</label>
+					<input
+						class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+						id="product-price"
+						placeholder="Enter product price"
+					/>
+				</div>
+				<div class="space-y-1">
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+						for="product-category"
+					>
+						Product Category
+					</label>
+					<button
+						type="button"
+						role="combobox"
+						aria-controls="radix-:r1r:"
+						aria-expanded="false"
+						aria-autocomplete="none"
+						dir="ltr"
+						data-state="closed"
+						data-placeholder=""
+						class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+					>
+						<span style="pointer-events: none;">Select category</span>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="h-4 w-4 opacity-50"
+							aria-hidden="true"
+						>
+							<path d="m6 9 6 6 6-6"></path>
+						</svg>
+					</button>
+					<select
+						aria-hidden="true"
+						tabindex="-1"
+						style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;"
+					>
+						<option value=""></option>
+					</select>
+				</div>
+				<div class="space-y-1">
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+						for="product-image"
+					>
+						Product Image
+					</label>
+					<input
+						class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+						id="product-image"
+						type="file"
+					/>
+				</div>
+				<button
+					class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+					type="submit"
+				>
+					Add Product
+				</button>
+			</form>
+		</div>
+	</main>
+</div>
