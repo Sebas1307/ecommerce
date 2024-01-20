@@ -2,19 +2,17 @@
 import StarIcon from './StarIcon.astro'
 
 const { rating } = Astro.props
-console.log(rating)
-
 ---
 
 <div class="flex items-center gap-0.5">
 	{
-		Array(rating)
-			.fill()
+		Array(Math.floor(rating))
+			.fill(0)
 			.map(() => <StarIcon />)
 	}
 	{
-		Array(5 - rating)
-			.fill()
-			.map(() => <StarIcon color="gray" />)
+		Array(5 - Math.floor(rating))
+			.fill(0)
+			.map(() => <StarIcon color="white" />)
 	}
 </div>
