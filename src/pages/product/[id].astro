@@ -1,7 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro'
+import Layout from '../../commons/layouts/Layout.astro'
 import ProductContainer from '../../modules/product/containers/ProductContainer.astro'
-import { getProductById, getProductList } from '../../services/products'
+import { getProductById, getProductList } from '../../commons/services/products'
 
 const { id } = Astro.params
 
