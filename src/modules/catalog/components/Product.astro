@@ -1,5 +1,5 @@
 ---
-import AddToCard from '../../../commons/components/AddToCard.astro'
+import { Button } from '../../../commons/components/Button.tsx'
 
 interface Props {
 	id: number
@@ -9,7 +9,7 @@ interface Props {
 	images?: string[]
 }
 
-const { id, title, description, price, images=[] } = Astro.props
+const { id, title, description, price, images = [] } = Astro.props
 ---
 
 <div
@@ -41,7 +41,7 @@ const { id, title, description, price, images=[] } = Astro.props
 		</p>
 	</div>
 	<div class="p-6 pt-0 flex gap-3">
-		<AddToCard title="Preview" />
-		<AddToCard title="Add to card" />
+		<Button client:load title="Preview" />
+		<Button client:load title="Add to card" />
 	</div>
 </div>

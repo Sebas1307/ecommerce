@@ -3,7 +3,7 @@ import ImageList from './ImageList.astro'
 import ActiveImage from './ActiveImage.astro'
 import Details from './Details.astro'
 import Quantity from './Quantity.astro'
-import AddToCard from '../../../commons/components/AddToCard.astro'
+import { Button } from '../../../commons/components/Button.tsx'
 
 const { product } = Astro.props
 
@@ -19,5 +19,5 @@ const rating = product?.rating && Math.round(product.rating)
 <div class="grid gap-4 md:gap-10 items-start">
 	<Details {...{ title, description, price, rating }} />
 	<Quantity />
-	<AddToCard title="Add to card" />
+	<Button client:load title="Add to card" />
 </div>
