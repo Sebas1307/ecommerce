@@ -65,12 +65,12 @@ export const Cart = () => {
 			<nav
 				className={
 					sidebar
-						? 'bg-[#060b26] w-64 h-screen flex justify-center fixed top-0 right-0 transition-all duration-300'
-						: 'bg-[#060b26] w-64 h-screen flex justify-center fixed top-0 -right-full transition-all duration-700'
+						? 'bg-[#0f0f0f] w-64 h-screen flex justify-center fixed top-0 right-0 transition-all duration-300'
+						: 'bg-[#0f0f0f] w-64 h-screen flex justify-center fixed top-0 -right-full transition-all duration-700'
 				}
 			>
 				<ul className="w-full" onClick={() => showSidebar()}>
-					<li className="bg-[#060b26] w-full h-20 flex justify-start items-center">
+					<li className="bg-[#0f0f0f] w-full h-20 flex justify-start items-center">
 						<button onClick={() => showSidebar()}>xd</button>
 					</li>
 					{sidebarData.map((item, index) => {
