@@ -41,7 +41,6 @@ export const Cart = () => {
 			<button
 				onClick={() => showSidebar()}
 				className="hidden lg:flex items-center gap-2"
-				href="/"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
