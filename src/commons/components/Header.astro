@@ -1,38 +1,33 @@
 ---
 import { Cart } from './Cart.jsx'
-import HeaderNavigation from './HeaderNavigation.astro'
-
-const navigation = [
-	{ name: 'Products', href: '#' },
-	{ name: 'About', href: '#' },
-	{ name: 'Contact', href: '#' },
-]
-
-const navigationButtons = [
-	{ name: 'Sign In', href: '#' },
-	{ name: 'Admin', href: '/admin' },
-]
 ---
 
 <header
-	class="flex items-center justify-between px-4 py-2 bg-white shadow-md fixed top-0 left-0 right-0 z-50"
+	class="grid grid-cols-3 items-center px-4 py-2 bg-white shadow-md fixed top-0 left-0 right-0 z-50"
 >
-	<a class="flex items-center text-lg font-semibold" href="/">
-		<span class="ml-2">
-			<nav class="hidden lg:flex gap-6">
-				<a class="text-sm font-medium" href="/"> Products</a>
-				<a class="text-sm font-medium" href="/"> About</a>
-				<a class="text-sm font-medium" href="/"> Contact</a>
-			</nav>
+	<div></div>
 
-			<div class="flex items-center gap-4">
-				<Cart client:load />
-				{
-					navigationButtons.map(({ name, href }) => (
-						<HeaderNavigation title={name} href={href} />
-					))
-				}
-			</div>
-		</span>
-	</a>
+	<nav class="main-nav hidden lg:flex gap-6 justify-center">
+		<a href="/">Products</a>
+		<a href="/">About</a>
+		<a href="/">Contact</a>
+	</nav>
+
+	<div class="flex items-center gap-4 justify-end">
+		<Cart client:load />
+		<div class="nav-links flex gap-4">
+			<a href="/admin">Admin</a>
+			<a href="/">Sign In</a>
+		</div>
+	</div>
 </header>
+
+<style>
+	.main-nav > a {
+		@apply text-sm font-medium;
+	}
+
+	.nav-links > a {
+		@apply inline-flex items-center justify-center rounded-md transition-colors h-10 py-2 text-sm;
+	}
+</style>
