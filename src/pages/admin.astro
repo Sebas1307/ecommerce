@@ -1,20 +1,8 @@
 ---
 import Layout from '../commons/layouts/Layout.astro'
-import AddProduct from '../modules/admin/components/AddProduct/index.astro'
-import Info from '../modules/product/components/Info.astro'
-
-const product = {
-	title: 'Product 1',
-	description: 'Description 1',
-	price: 100,
-	image: ['https://picsum.photos/200/300'],
-	id: 1,
-}
+import AdminContainer from '../modules/admin/containers/AdminContainer.astro'
 ---
 
 <Layout title="Admin">
-	<div class="flex">
-		<AddProduct />
-		<Info product={product} />
-	</div>
+	<AdminContainer />
 </Layout>

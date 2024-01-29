@@ -6,8 +6,8 @@ import Quantity from './Quantity.astro'
 import { Button } from '../../../commons/components/Button.tsx'
 
 const { product } = Astro.props
-
 const { title, description, price, images } = product
+
 const rating = product?.rating && Math.round(product.rating)
 ---
 
